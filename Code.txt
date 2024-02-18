@@ -1,0 +1,262 @@
+Last login: Sun Feb 18 09:05:42 on ttys000
+azmatsidhu@dhcp-10-142-251-34 ~ % cd Desktop
+azmatsidhu@dhcp-10-142-251-34 Desktop % cd Planets
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+nothing to commit, working tree clean
+azmatsidhu@dhcp-10-142-251-34 Planets % git log
+commit c08d25e29ef7ec10680ee97a53b07967d722aca0 (HEAD -> main)
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:51:12 2024 -0700
+
+    Added Planet Color
+
+commit 1ddcffed121019add7890cf937e859773ef439e2
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:39:23 2024 -0700
+
+    Location of mars
+azmatsidhu@dhcp-10-142-251-34 Planets % nano venus.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	venus.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+azmatsidhu@dhcp-10-142-251-34 Planets % git add *  
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   venus.txt
+
+azmatsidhu@dhcp-10-142-251-34 Planets % git diff
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   venus.txt
+
+azmatsidhu@dhcp-10-142-251-34 Planets % git commit venus.txt
+fatal: cannot run nano-git: No such file or directory
+error: unable to start editor 'nano-git'
+Please supply the message using either -m or -F option.
+azmatsidhu@dhcp-10-142-251-34 Planets % git commit -m "Color added" venus.txt
+[main d4f9e02] Color added
+ 1 file changed, 2 insertions(+)
+ create mode 100644 venus.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+nothing to commit, working tree clean
+azmatsidhu@dhcp-10-142-251-34 Planets % git log
+commit d4f9e0261a2fc8e8948d9a85225a47ad7ae46cde (HEAD -> main)
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 10:00:18 2024 -0700
+
+    Color added
+
+commit c08d25e29ef7ec10680ee97a53b07967d722aca0
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:51:12 2024 -0700
+
+    Added Planet Color
+
+commit 1ddcffed121019add7890cf937e859773ef439e2
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:39:23 2024 -0700
+
+    Location of mars
+azmatsidhu@dhcp-10-142-251-34 Planets % nano mars.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   mars.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+azmatsidhu@dhcp-10-142-251-34 Planets % git diff HEAD~1 mars.txt
+diff --git a/mars.txt b/mars.txt
+index 0ae4118..89e9903 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1,3 +1,5 @@
++Largest volcano in the solar system
++No life detected yet
+ Red Planet
+ Planet next to Earth
+ Red
+azmatsidhu@dhcp-10-142-251-34 Planets % git log
+commit d4f9e0261a2fc8e8948d9a85225a47ad7ae46cde (HEAD -> main)
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 10:00:18 2024 -0700
+
+    Color added
+
+commit c08d25e29ef7ec10680ee97a53b07967d722aca0
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:51:12 2024 -0700
+
+    Added Planet Color
+
+commit 1ddcffed121019add7890cf937e859773ef439e2
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:39:23 2024 -0700
+
+    Location of mars
+azmatsidhu@dhcp-10-142-251-34 Planets % git diff HEAD~2 mars.txt
+diff --git a/mars.txt b/mars.txt
+index 13e28e8..89e9903 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1,2 +1,5 @@
++Largest volcano in the solar system
++No life detected yet
++Red Planet
+ Planet next to Earth
+ Red
+azmatsidhu@dhcp-10-142-251-34 Planets % git diff
+diff --git a/mars.txt b/mars.txt
+index 0ae4118..89e9903 100644
+--- a/mars.txt
++++ b/mars.txt
+@@ -1,3 +1,5 @@
++Largest volcano in the solar system
++No life detected yet
+ Red Planet
+ Planet next to Earth
+ Red
+azmatsidhu@dhcp-10-142-251-34 Planets % git checkout HEAD mars.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % cat mars.txt
+Red Planet
+Planet next to Earth
+Red
+azmatsidhu@dhcp-10-142-251-34 Planets % git checkout HEAD~2 mars.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % cat mars.txt
+Planet next to Earth
+Red
+azmatsidhu@dhcp-10-142-251-34 Planets % git checkout d4f9e0261a2fc8e8948d9a85225a47ad7ae46cde mars.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+nothing to commit, working tree clean
+azmatsidhu@dhcp-10-142-251-34 Planets % git log
+commit d4f9e0261a2fc8e8948d9a85225a47ad7ae46cde (HEAD -> main)
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 10:00:18 2024 -0700
+
+    Color added
+
+commit c08d25e29ef7ec10680ee97a53b07967d722aca0
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:51:12 2024 -0700
+
+    Added Planet Color
+
+commit 1ddcffed121019add7890cf937e859773ef439e2
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:39:23 2024 -0700
+
+    Location of mars
+azmatsidhu@dhcp-10-142-251-34 Planets % git add mars.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git commit -m "Compelete File" mars.txt
+On branch main
+nothing to commit, working tree clean
+azmatsidhu@dhcp-10-142-251-34 Planets % git log
+commit d4f9e0261a2fc8e8948d9a85225a47ad7ae46cde (HEAD -> main)
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 10:00:18 2024 -0700
+
+    Color added
+
+commit c08d25e29ef7ec10680ee97a53b07967d722aca0
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:51:12 2024 -0700
+
+    Added Planet Color
+
+commit 1ddcffed121019add7890cf937e859773ef439e2
+Author: Azmat Sidhu <azmats@arizona.edu>
+Date:   Sun Feb 18 09:39:23 2024 -0700
+
+    Location of mars
+azmatsidhu@dhcp-10-142-251-34 Planets % ls
+mars.txt	venus.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % pwd
+/Users/azmatsidhu/Desktop/Planets
+azmatsidhu@dhcp-10-142-251-34 Planets % ls -a
+.		..		.git		mars.txt	venus.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % git remote add origin git@github.com:azmatsidhu/Planets-Feb2024.git
+azmatsidhu@dhcp-10-142-251-34 Planets % cd Planets
+cd: no such file or directory: Planets
+azmatsidhu@dhcp-10-142-251-34 Planets % git status
+On branch main
+nothing to commit, working tree clean
+azmatsidhu@dhcp-10-142-251-34 Planets % git remote add origin git@github.com:azmatsidhu/Planets-Feb2024.git
+fatal: remote origin already exists.
+azmatsidhu@dhcp-10-142-251-34 Planets % git remote -v
+origin	git@github.com:azmatsidhu/Planets-Feb2024.git (fetch)
+origin	git@github.com:azmatsidhu/Planets-Feb2024.git (push)
+azmatsidhu@dhcp-10-142-251-34 Planets % ls -al ~/.ssh
+ls: /Users/azmatsidhu/.ssh: No such file or directory
+azmatsidhu@dhcp-10-142-251-34 Planets % ssh-keygen -t ed25519 -C "azmats@arizona.edu"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/Users/azmatsidhu/.ssh/id_ed25519): 
+Created directory '/Users/azmatsidhu/.ssh'.
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/azmatsidhu/.ssh/id_ed25519
+Your public key has been saved in /Users/azmatsidhu/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:DN5JxrDRDiM7dDhVeQ7Vprr06S7AH/xU5YTrQ1kXI9o azmats@arizona.edu
+The key's randomart image is:
++--[ED25519 256]--+
+|     o+o.o.. o o.|
+|    = +=+ . * = o|
+|   . =o+++ + E . |
+|    o. *..o = .  |
+|     o..S. +     |
+|      o = . o    |
+|       + * . .   |
+|        + +      |
+|         +o      |
++----[SHA256]-----+
+azmatsidhu@dhcp-10-142-251-34 Planets % ssh -T git@github.com
+The authenticity of host 'github.com (140.82.114.3)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+git@github.com: Permission denied (publickey).
+azmatsidhu@dhcp-10-142-251-34 Planets % cat /Users/azmatsidhu/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGFP87lc/Cnmd74CLLjkV9USc7EPAm3oFkhmW6Dmss54 azmats@arizona.edu
+azmatsidhu@dhcp-10-142-251-34 Planets % ssh -T git@github.com
+Hi azmatsidhu! You've successfully authenticated, but GitHub does not provide shell access.
+azmatsidhu@dhcp-10-142-251-34 Planets % git push origin main 
+Counting objects: 9, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (9/9), 756 bytes | 756.00 KiB/s, done.
+Total 9 (delta 0), reused 0 (delta 0)
+To github.com:azmatsidhu/Planets-Feb2024.git
+ * [new branch]      main -> main
+azmatsidhu@dhcp-10-142-251-34 Planets % cd
+azmatsidhu@dhcp-10-142-251-34 ~ % nano Workshop-Github-Terminal-Work/Code.txt
+azmatsidhu@dhcp-10-142-251-34 ~ % nano Workshop-Github-Terminal-Work/Code.txt
+azmatsidhu@dhcp-10-142-251-34 ~ % git add Workshop-Github-Terminal-Work/Code.txt
+fatal: Not a git repository (or any of the parent directories): .git
+azmatsidhu@dhcp-10-142-251-34 ~ % git commit -m "All code learned at the Workshop for Github" 
+Workshop-Github-Terminal-Work/Code.txt
+fatal: Not a git repository (or any of the parent directories): .git
+azmatsidhu@dhcp-10-142-251-34 ~ % mv Workshop-Github-Terminal-Work/Code.txt Planets
+mv: rename Workshop-Github-Terminal-Work/Code.txt to Planets: No such file or directory
+azmatsidhu@dhcp-10-142-251-34 ~ % cd Desktop
+azmatsidhu@dhcp-10-142-251-34 Desktop % cd Planets
+azmatsidhu@dhcp-10-142-251-34 Planets % nanoWorkshop-Github-Terminal-Work/Code.txt
+zsh: no such file or directory: nanoWorkshop-Github-Terminal-Work/Code.txt
+azmatsidhu@dhcp-10-142-251-34 Planets % nano Workshop-Github-Terminal-Work/Code.txt
+
